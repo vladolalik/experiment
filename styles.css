@@ -1,0 +1,26 @@
+html, body {
+    height: 100%;
+    width: 100%
+}
+
+
+h1,p,div,html,body {
+    margin:0;
+    padding:0;
+}
+
+#content {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+
+#frame-container {
+    height: 90%;
+    width: 100%;
+}
+#frame-container iframe {
+    width:100%;
+    height:100%;
+}

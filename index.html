@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>UX experiment</title>
   </head>
   <body>
-    <div style="text-align: center;">
-      <iframe width="80%" height="80%" src="http://www.freshlabels.cz/" alt="circa1990browser" /> 
+  <div id="content">
+    <div id="frame-container">
+      <iframe src="http://www.freshlabels.cz/" alt="circa1990browser" />
     </div>
+  </div>
+<p>AAA</p>
+<script>
+  window.onlick=function() {
+    console.log("aaaaa");
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
+      }
+    };
+    xmlhttp.open("POST", "logger.php?param=trololo", true);
+    xmlhttp.send();
+  }
+</script>
+
   </body>
 </html>
