@@ -4,18 +4,28 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <meta charset="UTF-8">
+    <script type="text/javascript" src="experiment_scenario.json"></script>
     <title>Experiment | Tasks</title>
 </head>
 <body>
 <div id="content">
     <div id="frame-container">
-        <iframe src="http://www.freshlabels.cz/"></iframe>
+        <iframe src=""></iframe>
     </div>
     <div id="action-buttons">
-        <button type="button" class="btn btn-success">Hotovo, Prejst na dalsiu ulohu</button>
+        <button type="button" class="btn btn-success" on-click="nextStep()">Hotovo, Prejst na dalsi krok >></button>
     </div>
 </div>
 <script>
+    window.onload = main;
+    var scenario;
+    var step=0;
+
+    function main(){
+        scenario = JSON.parse(data);
+        document.querySelector("iframe").src = scenario[step].url;
+    }
+
     window.onclick = function () {
         console.log("aaaaa");
         var xmlhttp = new XMLHttpRequest();
@@ -24,8 +34,19 @@
                 console.log(xmlhttp.responseText);
             }
         };
-        xmlhttp.open("POST", "logger.php?param=trololo", true);
-        xmlhttp.send();
+        xmlhttp.open("POST", "logger.php", true);
+        xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xmlhttp.send("json=asdsadsads");
+    }
+
+    document.querySelector(".btn.btn-success").onclick=function(){
+        console.log("STEP " + step);
+        step++;
+        document.querySelector("iframe").src = scenario[step].url;
+    };
+
+    function nextStep() {
+
     }
 </script>
 </body>

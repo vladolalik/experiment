@@ -9,10 +9,21 @@ h1,p,div,html,body {
     padding:0;
 }
 
+/* TASKS SECTION */
 #content {
     width: 100%;
     height: 100%;
     text-align: center;
+}
+
+#action-buttons {
+    padding-top: 20px;
+    height: 10%;
+    background-color: #ced7d3;
+}
+
+#action-buttons button {
+    font-size: 2rem;
 }
 
 
@@ -56,4 +67,34 @@ h1,p,div,html,body {
 
 #nick-name-content input {
     width: 65%;
+}
+
+/* INSTRUCTION PAGE */
+#instr-inner-content {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#instr-content {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#instruction {
+    display: table;
+    width: 100%;
+    height: 100%;
+    background-color: #FAFAFA;
+}
+
+.info {
+    text-align: left;
+    margin-top: 70px;
+    font-size: 2rem;
+}
+
+#end-task {
+    margin-top: 30px;
 }

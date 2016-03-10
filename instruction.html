@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script type="text/javascript" src="instruction.json"></script>
+    <title>Instrukcie</title>
+</head>
+<body>
+<div id="instruction">
+<div id="instr-content">
+    <div id="instr-inner-content">
+        <h1></h1>
+        <div class="info">
+            <div id="instruction-text"><strong>Zadanie: </strong><span class="text"></span></div>
+            <div id="end-task"><strong>Ukoncenie ulohy: </strong><span class="text"></span></div>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+    function getURLParameter(name) {
+        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null;
+    }
+
+    window.onload = function () {
+        var instruction = JSON.parse(data);
+        var instructionId = getURLParameter("instruction_id");
+        document.querySelector("h1").innerHTML = instruction[instructionId].title;
+        document.querySelector("#instruction-text .text").innerHTML = instruction[instructionId].text;
+        document.querySelector("#end-task .text").innerHTML = instruction[instructionId].text_end;
+    }
+</script>
+</body>
+</html>

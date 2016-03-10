@@ -19,7 +19,10 @@
 <script>
     function createCookie() {
         console.log("click");
-        document.cookie="username=John Doe";
+        var name=document.querySelector("#nick-name").value;
+        document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+        document.cookie="username="+name+Date.now();
+        window.location = window.location.href + "tasks.html";
     }
 </script>
 </body>
