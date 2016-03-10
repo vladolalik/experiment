@@ -7,17 +7,17 @@
   <body>
   <div id="content">
     <div id="frame-container">
-      <iframe src="http://www.freshlabels.cz/" alt="circa1990browser" />
+      <iframe src="http://www.freshlabels.cz/" alt="circa1990browser"></iframe>
     </div>
+    <p>AAA</p>
   </div>
-<p>AAA</p>
 <script>
-  window.onlick=function() {
+  window.onclick=function() {
     console.log("aaaaa");
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
       if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
+        console.log(xmlhttp.responseText);
       }
     };
     xmlhttp.open("POST", "logger.php?param=trololo", true);
