@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>UX experiment</title>
-  </head>
-  <body>
-  <div id="content">
-    <div id="frame-container">
-      <iframe src="http://www.freshlabels.cz/" ></iframe>
+</head>
+<body>
+<div id="nick-name-content">
+    <div class="form">
+        <div class="form-group">
+            <label for="nick-name">Zadajte meno alebo prezyvku</label>
+            <input type="text" class="form-control" id="nick-name">
+            <button type="button" class="btn btn-success" onclick="createCookie()">Pokracovat</button>
+        </div>
     </div>
-    <p>AAA</p>
-  </div>
+</div>
 <script>
-  window.onclick=function() {
-    console.log("aaaaa");
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        console.log(xmlhttp.responseText);
-      }
-    };
-    xmlhttp.open("POST", "logger.php?param=trololo", true);
-    xmlhttp.send();
-  }
+    function createCookie() {
+        console.log("click");
+        document.cookie="username=John Doe";
+    }
 </script>
-
-  </body>
+</body>
 </html>

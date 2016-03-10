@@ -24,3 +24,36 @@ h1,p,div,html,body {
     width:100%;
     height:100%;
 }
+
+#nick-name {
+    float: left;
+    width: 30%;
+}
+
+#nick-name-content {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+.form {
+    display: table-cell;
+    vertical-align: middle;
+}
+.form-group {
+    margin-right: auto;
+    margin-left: auto;
+    width: 800px;
+}
+
+#nick-name-content label {
+    display: block;
+}
+
+#nick-name-content .btn-success {
+    width: 30%;
+    margin-left: 4%;
+}
+
+#nick-name-content input {
+    width: 65%;
+}

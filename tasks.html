@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="UTF-8">
+    <title>Experiment | Tasks</title>
+</head>
+<body>
+<div id="content">
+    <div id="frame-container">
+        <iframe src="http://www.freshlabels.cz/"></iframe>
+    </div>
+    <div id="action-buttons">
+        <button type="button" class="btn btn-success">Hotovo, Prejst na dalsiu ulohu</button>
+    </div>
+</div>
+<script>
+    window.onclick = function () {
+        console.log("aaaaa");
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                console.log(xmlhttp.responseText);
+            }
+        };
+        xmlhttp.open("POST", "logger.php?param=trololo", true);
+        xmlhttp.send();
+    }
+</script>
+</body>
+</html>
