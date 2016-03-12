@@ -5,14 +5,12 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <meta charset="UTF-8">
     <script type="text/javascript" src="experiment_scenario.json"></script>
-    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <title>Experiment | Tasks</title>
 </head>
 <body>
 <div id="content">
     <div id="frame-container">
-        <iframe src=""></iframe>
+        <iframe src="" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
     </div>
     <div id="action-buttons">
         <button type="button" class="btn btn-success" on-click="nextStep()">Hotovo, Prejst na dalsi krok >></button>
@@ -32,14 +30,6 @@
         scenario = JSON.parse(data);
         document.querySelector("iframe").src = scenario[parseInt(step)].url;
         console.log(scenario);
-//        $.getJSON('http://www.digislovakia.sk?=callback=?', function(data){
-//            console.log(data);
-//            $('#frame-container').html(data.contents);
-//        });
-//        $.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent('http://www.digislovakia.sk/') + '&callback=?', function(data){
-//            //alert(data.contents);
-//            $('#frame-container').html(data.contents)
-//        });
     }
 
 //    window.onclick = function () {

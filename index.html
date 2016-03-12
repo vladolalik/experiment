@@ -22,6 +22,7 @@
         var name=document.querySelector("#nick-name").value;
         document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
         document.cookie="username="+name+Date.now();
+        document.cookie="step=0";
         window.location = window.location.href + "tasks.html";
     }
 </script>
