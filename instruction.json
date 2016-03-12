@@ -1,1 +1,2 @@
-data = '{"freshlabels_instr":{"title":"FreshLabels", "text": "Chceli by ste si objednať novú zimnú bundu. Urobte tak prostredníctvom internetového obchodu http://www.freshlabels.cz/", "text_end": "Úloha končí pridaním produktu do košíka"}}';
+data = '{"freshlabels_instr":{"title":"FreshLabels", "text": "Chceli by ste si objednať novú zimnú bundu. Urobte tak prostredníctvom internetového obchodu http://www.freshlabels.cz/", "text_end": "Úloha končí pridaním produktu do košíka"},'+
+'"digitv_instr":{"title":"Digi Slovakia", "text": "Zistite kontaktné informácie na pobočku vo Vašom alebo najbližšom meste na stránke http://www.digislovakia.sk/.", "text_end": "Nájdenie adresy hľadanej pobočky."}}';

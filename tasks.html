@@ -5,6 +5,8 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <meta charset="UTF-8">
     <script type="text/javascript" src="experiment_scenario.json"></script>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <title>Experiment | Tasks</title>
 </head>
 <body>
@@ -19,11 +21,25 @@
 <script>
     window.onload = main;
     var scenario;
-    var step=0;
+    step = getCookie("step");
+    if (step==""){
+        step = "0";
+        setCookie("step",step);
+    }
+
 
     function main(){
         scenario = JSON.parse(data);
-        document.querySelector("iframe").src = scenario[step].url;
+        document.querySelector("iframe").src = scenario[parseInt(step)].url;
+        console.log(scenario);
+//        $.getJSON('http://www.digislovakia.sk?=callback=?', function(data){
+//            console.log(data);
+//            $('#frame-container').html(data.contents);
+//        });
+//        $.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent('http://www.digislovakia.sk/') + '&callback=?', function(data){
+//            //alert(data.contents);
+//            $('#frame-container').html(data.contents)
+//        });
     }
 
 //    window.onclick = function () {
@@ -41,12 +57,29 @@
 
     document.querySelector(".btn.btn-success").onclick=function(){
         console.log("STEP " + step);
-        step++;
-        document.querySelector("iframe").src = scenario[step].url;
+        var stepNum = parseInt(getCookie("step"));
+        stepNum++;
+        setCookie("step",stepNum.toString());
+        document.querySelector("iframe").src = scenario[stepNum].url;
     };
 
     function nextStep() {
 
+    }
+
+    function setCookie(cname, cvalue) {
+        document.cookie = cname + "=" + cvalue;
+    }
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i<ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+        }
+        return "";
     }
 </script>
 </body>
