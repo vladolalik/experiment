@@ -8,5 +8,6 @@ instr ='{' +
           '"hilton_instr":{"title":"Hilton hotels - Rezervacia ubytovania", "text": "Chystáte sa na výlet do Prahy a potrebujete si rezervovať izbu. Urobte tak prostredníctvom stránky hotela Hilton", "text_end": "Úloha končí vybraním voľnej izby a úspešným vyplnením formuláru, ktorý sa nachádza v treťom kroku rezervácie."},'+
           '"climb_instr":{"title":"Menagerie climb - Online nákup", "text": "Rozhodli ste sa spraviť si lezeckú stenu a potrebujete si objednať nové úchytky pre túto stenu. Urobte tak prostredníctvom internetového obchodu http://menagerieclimb.com/shop/.", "text_end": "Úloha končí vložením daného produktu do košíka."},'+
           '"booking_instr":{"title":"Booking - Registrácia Vašej nehnuteľnosti", "text": "Zdedili ste horskú chatu, ktorú by ste chceli začať prenajímať. Zaregistrujte ju preto na portáli booking.com.", "text_end": "Úloha končí úspešným vyplnením formuláru, ktorý predstavuje prvý krok pri registrácií nehnuteľnosti."},'+
-          '"freshlbls_instr":{"title":"FreshLabels - Online nakup", "text": "Chceli by ste si objednať novú zimnú bundu. Urobte tak prostredníctvom internetového obchodu freshlabels.cz", "text_end": "Úloha končí pridaním produktu do košíka"}'+
+          '"freshlbls_instr":{"title":"FreshLabels - Online nakup", "text": "Chceli by ste si objednať novú zimnú bundu. Urobte tak prostredníctvom internetového obchodu freshlabels.cz", "text_end": "Úloha končí pridaním produktu do košíka"},'+
+          '"end":{"title":"Ďakujem za účasť :-)", "text": "", "text_end": ""}'+
 '}';
