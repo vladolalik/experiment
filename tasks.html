@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <meta charset="UTF-8">
     <script type="text/javascript" src="experiment_scenario.json"></script>
@@ -20,36 +21,37 @@
     window.onload = main;
     var scenario;
     step = getCookie("step");
-    if (step==""){
+    if (step == "") {
         step = "0";
-        setCookie("step",step);
+        setCookie("step", step);
     }
 
 
-    function main(){
+    function main() {
+        //Ignore X-Frame headers
         scenario = JSON.parse(data);
         document.querySelector("iframe").src = scenario[parseInt(step)].url;
         console.log(scenario);
     }
 
-//    window.onclick = function () {
-//        console.log("aaaaa");
-//        var xmlhttp = new XMLHttpRequest();
-//        xmlhttp.onreadystatechange = function () {
-//            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-//                console.log(xmlhttp.responseText);
-//            }
-//        };
-//        xmlhttp.open("POST", "logger.php", true);
-//        xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-//        xmlhttp.send("json=asdsadsads");
-//    }
+    //    window.onclick = function () {
+    //        console.log("aaaaa");
+    //        var xmlhttp = new XMLHttpRequest();
+    //        xmlhttp.onreadystatechange = function () {
+    //            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+    //                console.log(xmlhttp.responseText);
+    //            }
+    //        };
+    //        xmlhttp.open("POST", "logger.php", true);
+    //        xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    //        xmlhttp.send("json=asdsadsads");
+    //    }
 
-    document.querySelector(".btn.btn-success").onclick=function(){
+    document.querySelector(".btn.btn-success").onclick = function () {
         console.log("STEP " + step);
         var stepNum = parseInt(getCookie("step"));
         stepNum++;
-        setCookie("step",stepNum.toString());
+        setCookie("step", stepNum.toString());
         document.querySelector("iframe").src = scenario[stepNum].url;
     };
 
@@ -64,10 +66,10 @@
     function getCookie(cname) {
         var name = cname + "=";
         var ca = document.cookie.split(';');
-        for(var i=0; i<ca.length; i++) {
+        for (var i = 0; i < ca.length; i++) {
             var c = ca[i];
-            while (c.charAt(0)==' ') c = c.substring(1);
-            if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+            while (c.charAt(0) == ' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
         }
         return "";
     }
