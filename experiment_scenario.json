@@ -19,5 +19,5 @@ data = '['+
           '{"url": "http://www.booking.com", "type": "task"},'+
           '{"url": "./instruction.html?instruction_id=freshlbls_instr", "type": "instruction"},'+
           '{"url": "http://freshlabels.cz/", "type": "task"},'+
-          '{"url": "./instruction.html?instruction_id=end", "type": "instruction"},'+
+          '{"url": "./instruction.html?instruction_id=end", "type": "instruction"}'+
       ']';
