@@ -26,7 +26,8 @@
     }
 
     window.onload = function () {
-        var instruction = JSON.parse(data);
+        var instruction = JSON.parse(instr);
+        console.log("instr" + instruction);
         var instructionId = getURLParameter("instruction_id");
         document.querySelector("h1").innerHTML = instruction[instructionId].title;
         document.querySelector("#instruction-text .text").innerHTML = instruction[instructionId].text;

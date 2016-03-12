@@ -1,6 +1,22 @@
 data = '['+
-          '{"url": "./instruction.html?instruction_id=freshlabels_instr"},'+
-          '{"url": "http://www.freshlabels.cz/"},'+
-          '{"url": "./instruction.html?instruction_id=digitv_instr"},'+
-          '{"url": "http://www.digislovakia.sk/"}'+
+          '{"url": "./instruction.html?instruction_id=digitv_instr", "type": "instruction"},'+
+          '{"url": "http://www.digislovakia.sk/", "type": "task"},'+
+          '{"url": "./instruction.html?instruction_id=mbank_instr", "type": "instruction"},'+
+          '{"url": "http://demo.mbank.sk/", "type": "task"},'+
+          '{"url": "./instruction.html?instruction_id=skylink_instr", "type": "instruction"},'+
+          '{"url": "http://www.skylink.sk/", "type": "task"},'+
+          '{"url": "./instruction.html?instruction_id=glhotels_instr", "type": "instruction"},'+
+          '{"url": "https://www.galahotels.com", "type": "task"},'+
+          '{"url": "./instruction.html?instruction_id=usability_instr", "type": "instruction"},'+
+          '{"url": "http://www.usability.gov/", "type": "task"},'+
+          '{"url": "./instruction.html?instruction_id=blackcomb_instr", "type": "instruction"},'+
+          '{"url": "http://www.blackcomb.sk/", "type": "task"},'+
+          '{"url": "./instruction.html?instruction_id=hilton_instr", "type": "instruction"},'+
+          '{"url": "http://www3.hilton.com/", "type": "task"},'+
+          '{"url": "./instruction.html?instruction_id=climb_instr", "type": "instruction"},'+
+          '{"url": "http://menagerieclimb.com", "type": "task"},'+
+          '{"url": "./instruction.html?instruction_id=booking_instr", "type": "instruction"},'+
+          '{"url": "http://www.booking.com", "type": "task"},'+
+          '{"url": "./instruction.html?instruction_id=freshlbls_instr", "type": "instruction"},'+
+          '{"url": "http://freshlabels.cz/", "type": "task"}'+
       ']';

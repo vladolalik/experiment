@@ -23,6 +23,17 @@ var actualURL;
 var dataLogs = [];
 var username = "";
 
+
+function getURLParameter(name) {
+    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+}
+
+username = getURLParameter('username');
+if (username!=""){
+    document.cookie = "username="+username;
+}
+
+
 /** initialisation **/
 var date = new Date();
 var timeStamp = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "." + date.getMilliseconds();
@@ -178,9 +189,9 @@ function getScreenCoordinatesOf(obj) {
     }
 }
 
-var createUserCookies=function() {
-    username = setUserCookies();
-};
-
-
-loadScript("http://localhost/experiment/experiment/tampermonkey-scripts/user-id.js", createUserCookies);
+//var createUserCookies=function() {
+//    username = setUserCookies();
+//};
+//
+//
+//loadScript("http://localhost/experiment/experiment/tampermonkey-scripts/user-id.js", createUserCookies);
