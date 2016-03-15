@@ -43,18 +43,6 @@ uploadData(urlChangeEvent);
 actualURL = window.location.href;
 /** initilisation **/
 
-/** Back button detection **/
-if (window.history && window.history.pushState) {
-    window.history.pushState('forward', null, '#');
-    $(window).on('popstate', function() {
-        var date = new Date();
-        var timeStamp = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "." + date.getMilliseconds();
-        var backBtnEvent = "{Type: \"BACK_BUTTON\", TimeStamp: \"" + timeStamp + "\", URL: \"" +  window.location.href + "\" }"
-        console.log(backBtnEvent);
-        uploadData(backBtnEvent);
-        window.history.back();
-    });
-}
 
 function getCookie(cname) {
     var name = cname + "=";
