@@ -42,8 +42,10 @@ function getCookie(cname) {
 username = getURLParameter('username');
 
 if (username!=""){
-    if (getCookie('username')=="")
-        document.cookie = "username="+username;
+    console.log("Cookie " + getCookie('username'));
+    if (getCookie('username')=="") {
+        document.cookie = "username=" + username;
+    }
 }
 
 
@@ -75,6 +77,24 @@ var myVar = setInterval(function () {
     var tempNames = result[1];
     logPositions(tempElements, tempNames);
 }, 100);
+
+window.onbeforeunload = confirmExit;
+function confirmExit()
+{
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            // console.log(xmlhttp.responseText);
+        }
+    };
+
+    dataLogs.push(data);
+    //if (dataLogs.length > 500) {
+    xmlhttp.open("POST", url + "logger.php?username="+username, true);
+    xmlhttp.send(dataLogs.join("\n"));
+    dataLogs = [];
+
+}
 
 function logPositions(tempElements, tempElementsNames) {
     for (var i = 0; i < tempElements.length; i++) {
