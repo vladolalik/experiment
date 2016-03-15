@@ -37,10 +37,24 @@ if (username!=""){
 /** initialisation **/
 var date = new Date();
 var timeStamp = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "." + date.getMilliseconds();
-console.log("{Type: \"URL\", TimeStamp: \"" + timeStamp + "\" URL: \"" + window.location.href + "\"}");
+var urlChangeEvent = "{Type: \"URL\", TimeStamp: \""+ timeStamp +"\", URL: \"" + window.location.href + "\"}";
+console.log(urlChangeEvent);
+uploadData(urlChangeEvent);
 actualURL = window.location.href;
 /** initilisation **/
 
+/** Back button detection **/
+if (window.history && window.history.pushState) {
+    window.history.pushState('forward', null, '#');
+    $(window).on('popstate', function() {
+        var date = new Date();
+        var timeStamp = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "." + date.getMilliseconds();
+        var backBtnEvent = "{Type: \"BACK_BUTTON\", TimeStamp: \"" + timeStamp + "\", URL: \"" +  window.location.href + "\" }"
+        console.log(backBtnEvent);
+        uploadData(backBtnEvent);
+        window.history.back();
+    });
+}
 
 function getCookie(cname) {
     var name = cname + "=";
@@ -69,8 +83,8 @@ function logPositions(tempElements, tempElementsNames) {
             var dimensions = computeDimensions(pElm, elm);
             var date = new Date();
             var timeStamp = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "." + date.getMilliseconds();
-            var position = "{Type: \"Position\", TimeStamp: \"" + timeStamp + "\", URL: \"" + actualURL + "\", AOIName: \"" + tempElementsNames[i] + "\", PositionX:\"" + dimensions.pX + "\"," +
-                ", PositionY:\"" + dimensions.pY + "\", Width:\"" + dimensions.width + "\", Height:\"" + dimensions.height + "\"}";
+            var position = "{Type: \"Position\", TimeStamp: \""+ timeStamp +"\", URL: \""+actualURL+"\", AOIName: \"" + tempElementsNames[i] +"\", PositionX:\""+ dimensions.pX +"\"," +
+            " PositionY:\""+ dimensions.pY +"\", Width:\""+ dimensions.width +"\", Height:\""+ dimensions.height +"\"}";
             console.log(position);
             uploadData(position);
         }
@@ -140,8 +154,18 @@ window.onmousemove = function (e) {
 window.onmousedown = function (e) {
     var button = "";
     button = e.button === 0 ? "LEFT_BUTTON" : "RIGHT_BUTTON";
-    console.log("MouseEvent," + Date.now() + "," + button + "," + e.screenX + "," + e.screenY);
+    var mouseEvent = "{Type: \"MouseEvent\", TimeStamp: \""+ timeStamp +"\", URL: \""+actualURL+"\", ClickX:\""+ e.screenX +"\"," +
+        "ClickY:\""+ e.screenY +"\", MouseButton:\""+ button +"\"}";
+    console.log(mouseEvent);
+    uploadData(mouseEvent);
     //logPositions(elementIDs);
+};
+
+document.onkeypress = function (e){
+    var charCode = (typeof e.which == "number") ? e.which : e.keyCode
+    var keyEvent = "{Type: \"KeyEvent\", TimeStamp: \""+ timeStamp +"\", URL: \""+actualURL+"\", Key:\""+ charCode +"\"}";
+    console.log(keyEvent);
+    uploadData(keyEvent);
 };
 
 function getElementsByClassName() {

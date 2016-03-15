@@ -1,8 +1,8 @@
 data = '['+
           '{"url": "./instruction.html?instruction_id=digitv_instr", "type": "instruction"},'+
           '{"url": "http://www.digislovakia.sk/", "type": "task"},'+
-          '{"url": "./instruction.html?instruction_id=mbank_instr", "type": "instruction"},'+
-          '{"url": "http://demo.mbank.sk/", "type": "task"},'+
+          '{"url": "./instruction.html?instruction_id=fio_instr", "type": "instruction"},'+
+          '{"url": "https://www.fio.cz/ib2/login", "type": "task"},'+
           '{"url": "./instruction.html?instruction_id=skylink_instr", "type": "instruction"},'+
           '{"url": "http://www.skylink.sk/", "type": "task"},'+
           '{"url": "./instruction.html?instruction_id=glhotels_instr", "type": "instruction"},'+
