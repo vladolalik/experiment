@@ -21,7 +21,7 @@ var pageX;
 var pageY;
 var actualURL;
 var dataLogs = [];
-var username = "";
+var username = getCookie("username");
 
 
 function getURLParameter(name) {
@@ -39,10 +39,13 @@ function getCookie(cname) {
     return "";
 }
 
-username = getURLParameter('username');
+if (username==""){
+   username = getURLParameter('username');
+}
+
+console.log("Cookie " + getCookie('username'));
 
 if (username!=""){
-    console.log("Cookie " + getCookie('username'));
     if (getCookie('username')=="") {
         document.cookie = "username=" + username;
     }
@@ -239,4 +242,4 @@ function getScreenCoordinatesOf(obj) {
 //};
 //
 //
-//loadScript("http://localhost/experiment/experiment/tampermonkey-scripts/user-id.js", createUserCookies);
+//loadScript("http://localhost/experiment/experiment/tampermonkey-scripts/user-id.js", createUserCookies);	
