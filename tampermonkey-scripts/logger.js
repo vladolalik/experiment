@@ -81,23 +81,21 @@ var myVar = setInterval(function () {
     logPositions(tempElements, tempNames);
 }, 100);
 
-window.onbeforeunload = confirmExit;
-function confirmExit()
-{
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            // console.log(xmlhttp.responseText);
-        }
-    };
 
-    dataLogs.push(data);
-    //if (dataLogs.length > 500) {
-    xmlhttp.open("POST", url + "logger.php?username="+username, true);
-    xmlhttp.send(dataLogs.join("\n"));
-    dataLogs = [];
-
+//// before leave page send data to logger
+function sendLogsBeforeLeave() {
+    localStorage.setItem("aois", JSON.stringify(dataLogs));
+    window.onbeforeunload = null;
 }
+
+function exitConfirmation () {
+    //setTimeout( sendLogsBeforeLeave, 0 );
+    localStorage.setItem("aois", JSON.stringify(dataLogs));
+    return "There are unsaved changes on this canvas, all your changes will be lost if you exit !";
+}
+
+window.onbeforeunload = exitConfirmation();
+
 
 function logPositions(tempElements, tempElementsNames) {
     for (var i = 0; i < tempElements.length; i++) {
@@ -124,7 +122,7 @@ function uploadData(data){
     };
 
     dataLogs.push(data);
-    if (dataLogs.length > 500) {
+    if (dataLogs.length > 50) {
         xmlhttp.open("POST", url + "logger.php?username="+username, true);
         xmlhttp.send(dataLogs.join("\n"));
         dataLogs = [];
