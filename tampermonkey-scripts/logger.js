@@ -79,7 +79,7 @@ var myVar = setInterval(function () {
     var tempElements = result[0];
     var tempNames = result[1];
     logPositions(tempElements, tempNames);
-}, 100);
+}, 75);
 
 
 //// before leave page send data to logger
