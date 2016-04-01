@@ -114,7 +114,7 @@ function logPositions(tempElements, tempElementsNames) {
 }
 
 function uploadData(data){
-    var xmlhttp = new XMLHttpRequest();
+   /* var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             // console.log(xmlhttp.responseText);
@@ -126,7 +126,7 @@ function uploadData(data){
         xmlhttp.open("POST", url + "logger.php?username="+username, true);
         xmlhttp.send(dataLogs.join("\n"));
         dataLogs = [];
-    }
+    }*/
 }
 
 function checkVisible(pElm, elm) {

@@ -5,8 +5,8 @@ data = '['+
           '{"url": "https://www.fio.cz/ib2/login", "type": "task"},'+
           '{"url": "./instruction.html?instruction_id=skylink_instr", "type": "instruction"},'+
           '{"url": "http://www.skylink.sk/", "type": "task"},'+
-          '{"url": "./instruction.html?instruction_id=glhotels_instr", "type": "instruction"},'+
-          '{"url": "https://www.galahotels.com", "type": "task"},'+
+          '{"url": "./instruction.html?instruction_id=croatia_instr", "type": "instruction"},'+
+          '{"url": "http://www.adriatic.hr/sk/apply", "type": "task"},'+
           '{"url": "./instruction.html?instruction_id=usability_instr", "type": "instruction"},'+
           '{"url": "http://www.usability.gov/", "type": "task"},'+
           '{"url": "./instruction.html?instruction_id=blackcomb_instr", "type": "instruction"},'+
@@ -19,5 +19,7 @@ data = '['+
           '{"url": "https://join.booking.com/", "type": "task"},'+
           '{"url": "./instruction.html?instruction_id=freshlbls_instr", "type": "instruction"},'+
           '{"url": "http://freshlabels.cz/", "type": "task"},'+
+          '{"url": "./instruction.html?instruction_id=fmg_instr", "type": "instruction"},'+
+          '{"url": "http://www.fitmagazin.sk/", "type": "task"},'+
           '{"url": "./instruction.html?instruction_id=end", "type": "instruction"}'+
       ']';
