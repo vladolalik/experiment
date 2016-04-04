@@ -8,6 +8,17 @@
     <title>UX experiment</title>
 </head>
 <body>
+<div style="
+    width: 100%;
+    padding-top: 88px;
+    text-align: center;
+    ">
+    <p style="padding-left:10%;padding-right: 10%;font-size: 2rem;">Experiment bude prebiehať tak, že sa Vám pred každou úlohou
+        zobrazia inštrukcie, ktoré je potrebné pozorne
+        prečítať. Následne v spodnej časti stránky stlačíte tlačidlo "Hotovo" a ked si myslíte, že ste splnili úlohu tak
+        znovu použijete toto tlačidlo. Tlačidlo stlačte vždy iba raz, a počkajte kým sa načíta ďalší krok
+    </p>
+</div>
 <div id="nick-name-content">
     <div class="form">
         <div class="form-group">
@@ -20,10 +31,10 @@
 <script>
     function createCookie() {
         console.log("click");
-        var name=document.querySelector("#nick-name").value;
+        var name = document.querySelector("#nick-name").value;
         document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-        document.cookie="username="+name+Date.now();
-        document.cookie="step=0";
+        document.cookie = "username=" + name + Date.now();
+        document.cookie = "step=0";
         window.location = window.location.href + "tasks.html";
     }
 </script>
