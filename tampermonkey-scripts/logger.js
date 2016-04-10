@@ -176,7 +176,8 @@ window.onmousemove = function (e) {
 window.onmousedown = function (e) {
     var button = "";
     button = e.button === 0 ? "LEFT_BUTTON" : "RIGHT_BUTTON";
-    var mouseEvent = "{Type: \"MouseEvent\", TimeStamp: \""+ timeStamp +"\", URL: \""+actualURL+"\", ClickX:\""+ e.screenX +"\"," +
+    var timeStampE = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "." + date.getMilliseconds();
+    var mouseEvent = "{Type: \"MouseEvent\", TimeStamp: \""+ timeStampE +"\", URL: \""+actualURL+"\", ClickX:\""+ e.screenX +"\"," +
         "ClickY:\""+ e.screenY +"\", MouseButton:\""+ button +"\"}";
     console.log(mouseEvent);
     uploadData(mouseEvent);
